@@ -1,4 +1,4 @@
-package controller;
+package Controller;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -6,13 +6,13 @@ import java.util.Observer;
 
 import javax.swing.table.TableModel;
 
-import model.Admin;
-import model.Customer;
-import model.ObserverType;
-import model.Seat;
-import model.Show;
-import model.Ticket;
-import repository.Repository;
+import Model.Admin;
+import Model.Customer;
+import Model.ObserverType;
+import Model.Seat;
+import Model.Show;
+import Model.Ticket;
+import Repository.Repository;
 
 public class Controller extends Observable{
 

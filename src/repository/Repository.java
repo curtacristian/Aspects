@@ -1,4 +1,4 @@
-package repository;
+package Repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,11 +11,11 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import model.Admin;
-import model.Customer;
-import model.Seat;
-import model.Show;
-import model.Ticket;
+import Model.Admin;
+import Model.Customer;
+import Model.Seat;
+import Model.Show;
+import Model.Ticket;
 
 public class Repository {
 	private ArrayList<Show> allShows;

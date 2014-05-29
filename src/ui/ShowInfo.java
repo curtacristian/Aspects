@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import model.Show;
+import Model.Show;
 
 public class ShowInfo extends JFrame {
 

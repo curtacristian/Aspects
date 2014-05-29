@@ -1,11 +1,11 @@
-package controller;
+package Controller;
 
 import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import model.Seat;
-import repository.Repository;
+import Model.Seat;
+import Repository.Repository;
 
 public class SeatTableModel extends AbstractTableModel{
 	ArrayList<Seat> seats;

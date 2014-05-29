@@ -7,16 +7,14 @@ import java.util.Observer;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableModel;
 
-import model.ObserverType;
-import model.Show;
-import controller.Controller;
+import Controller.Controller;
+import Model.ObserverType;
+import Model.Show;
 
 public class MainWindow extends JFrame implements Observer {
 

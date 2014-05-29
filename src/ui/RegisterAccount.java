@@ -12,7 +12,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import controller.Controller;
+import Controller.Controller;
 
 public class RegisterAccount extends JFrame {
 

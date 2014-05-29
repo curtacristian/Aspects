@@ -1,12 +1,10 @@
-package controller;
+package Controller;
 
-import java.awt.print.Book;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
-import model.Show;
+import Model.Show;
 
 
 

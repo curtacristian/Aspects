@@ -1,8 +1,8 @@
 package startapp;
 
-import repository.Repository;
 import ui.MainWindow;
-import controller.Controller;
+import Controller.Controller;
+import Repository.Repository;
 
 public class Application {
 

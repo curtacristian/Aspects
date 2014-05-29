@@ -17,9 +17,9 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableCellRenderer;
 
-import model.Seat;
-import model.Show;
-import controller.Controller;
+import Controller.Controller;
+import Model.Seat;
+import Model.Show;
 
 public class ReserveSeats extends JFrame {
 
