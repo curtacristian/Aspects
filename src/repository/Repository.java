@@ -17,12 +17,13 @@ import Model.Seat;
 import Model.Show;
 import Model.Ticket;
 
+
 public class Repository {
-	private ArrayList<Show> allShows;
-	private ArrayList<Seat> allSeats;
-	private ArrayList<Customer> allCustomers;
-	private ArrayList<Admin> allAdmins;
-	private ArrayList<Ticket> allTickets,reservedTickets;
+	public ArrayList<Show> allShows;
+	public ArrayList<Seat> allSeats;
+	public ArrayList<Customer> allCustomers;
+	public ArrayList<Admin> allAdmins;
+	public ArrayList<Ticket> allTickets,reservedTickets;
 	
 	private Connection con;
 	
@@ -133,28 +134,68 @@ public class Repository {
 	}
 	
 	public ArrayList<Show> getShows(){
+		GetData gd=new GetData(this);
+		gd.start();
+		try {
+			gd.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this.allShows;
 	}
 	
 	public ArrayList<Admin> getAdmins(){
+		GetData gd=new GetData(this);
+		gd.start();
+		try {
+			gd.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this.allAdmins;
 	}
 	
 	public ArrayList<Customer> getCustomers(){
+		GetData gd=new GetData(this);
+		gd.start();
+		try {
+			gd.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this.allCustomers;
 	}
 	
 	public ArrayList<Seat> getSeats(){
+		GetData gd=new GetData(this);
+		gd.start();
+		try {
+			gd.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this.allSeats;
 	}
 	
 	public ArrayList<Ticket> getTickets(){
+		GetData gd=new GetData(this);
+		gd.start();
+		try {
+			gd.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this.allTickets;
 	}
 	
 	class DBConn extends Thread{
 		public void run(){
-			String url ="jdbc:sqlserver://192.168.0.14\\BATTLESTATION;databaseName=MovieReservation;integratedSecurity=true";
+			String url ="jdbc:sqlserver://BATTLESTATION\\BATTLESTATION;databaseName=MovieReservation;integratedSecurity=true";
 			try {
 				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			} catch (ClassNotFoundException e) {
@@ -484,8 +525,6 @@ class UpdateTicketDB extends Thread{
 	}
 	
 }
-
-
 
 class UpdateShowDB extends Thread{
 	
