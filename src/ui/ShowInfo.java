@@ -1,4 +1,4 @@
-package ui;
+package Ui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
