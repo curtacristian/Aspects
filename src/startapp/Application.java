@@ -10,7 +10,6 @@ public class Application {
 		Repository repo=new Repository();
 		Controller cont=new Controller(repo);
 		MainWindow mw=new MainWindow(cont);
-		cont.registerObserver(mw);
 		mw.show();
 	}
 	

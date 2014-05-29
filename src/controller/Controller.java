@@ -1,8 +1,7 @@
 package Controller;
 
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
+
 
 import javax.swing.table.TableModel;
 
@@ -14,19 +13,18 @@ import Model.Show;
 import Model.Ticket;
 import Repository.Repository;
 
-public class Controller extends Observable{
+public class Controller{
 
 	private Repository repo;
-	private ArrayList<Observer> observers;
 	private int loggertype,loggerid;
 	private ShowTableModel stm;
 	private SeatTableModel seatm;
+	public ObserverType loggerType=ObserverType.unknown;
 	
 	public Controller(Repository rep){
 		this.repo=rep;
 		this.loggerid=-1;
 		this.loggertype=-1;
-		this.observers=new ArrayList<Observer>();
 		this.stm=new ShowTableModel(this.repo.getShows());
 	}
 	
@@ -55,10 +53,7 @@ public class Controller extends Observable{
 		this.seatm=new SeatTableModel(this.filterByPositionPlace(showid, position,place),this.repo,showid);
 		return this.seatm;
 	}
-	
-	public void registerObserver(Observer obs){
-		this.observers.add(obs);
-	}
+
 	
 	public int loggedinType(){
 		return this.loggertype;
@@ -109,7 +104,7 @@ public class Controller extends Observable{
 		cid++;
 		Customer c=new Customer(cid,name,pass,address);
 		this.repo.addCustomer(c);
-		this.notifyGUI(ObserverType.insertedPerson);
+		this.loggerType=ObserverType.insertedPerson;
 	}
 	
 	public void addShow(String date,String time,String name,int places){
@@ -186,10 +181,6 @@ public class Controller extends Observable{
 		return null;
 	}
 	
-	public void notifyGUI(ObserverType ob){
-		this.observers.get(0).update(this,ob);
-	}
-	
 	public int getLoggerID(){
 		return this.loggerid;
 	}
@@ -197,14 +188,14 @@ public class Controller extends Observable{
 	public void logout(){
 		this.loggerid=-1;
 		this.loggertype=-1;
-		this.notifyGUI(ObserverType.loggedOut);
+		this.loggerType=ObserverType.loggedOut;
 	}
 	
 	public void login(String name,String pass){
 		ArrayList<Customer> all=this.repo.getCustomers();
 		for(Customer c:all){
 			if(c.getName().equals(name)&&c.getPassword().equals(pass)){
-				this.notifyGUI(ObserverType.loggedPerson);
+				this.loggerType=ObserverType.loggedAdmin;
 				this.loggertype=2;
 				this.loggerid=c.getID();
 				return;
@@ -213,7 +204,7 @@ public class Controller extends Observable{
 		ArrayList<Admin> allAd=this.repo.getAdmins();
 		for(Admin a:allAd){
 			if(a.getName().equals(name)&&a.getPassword().equals(pass)){
-				this.notifyGUI(ObserverType.loggedAdmin);
+				this.loggerType=ObserverType.loggedAdmin;
 				this.loggertype=1;
 				this.loggerid=a.getID();
 				return;

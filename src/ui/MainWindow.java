@@ -16,10 +16,10 @@ import Controller.Controller;
 import Model.ObserverType;
 import Model.Show;
 
-public class MainWindow extends JFrame implements Observer {
+public class MainWindow extends JFrame{
 
 	private JPanel contentPane;
-	private JButton btnAddShow,btnUpdateShow,btnDeleteShow,btnLogin,btnLogout;
+	public static JButton btnAddShow,btnUpdateShow,btnDeleteShow,btnLogin,btnLogout;
 	private JButton btnGetShowInfo;
 	private Controller cont;
 	private JTable tabelB;
@@ -152,34 +152,6 @@ public class MainWindow extends JFrame implements Observer {
 	public void alertLogin(){
 		JOptionPane.showMessageDialog(this, "To reserve tickets you need to login!");
 	}
-	
-	
-	
-	@Override
-	public void update(Observable o, Object arg) {
-		
-		ObserverType args=(ObserverType)arg;
-		if(args.equals(ObserverType.loggedAdmin)){
-			btnLogin.setVisible(false);
-			btnLogout.setVisible(true);
-			btnAddShow.setVisible(true);
-			btnUpdateShow.setVisible(true);
-			btnDeleteShow.setVisible(true);
-		}
-		if(args.equals(ObserverType.loggedPerson)){
-			btnLogin.setVisible(false);
-			btnLogout.setVisible(true);
-			btnAddShow.setVisible(false);
-			btnUpdateShow.setVisible(false);
-			btnDeleteShow.setVisible(false);
-		}
-		if(args.equals(ObserverType.loggedOut)){
-			btnLogin.setVisible(true);
-			btnLogout.setVisible(false);
-			btnAddShow.setVisible(false);
-			btnUpdateShow.setVisible(false);
-			btnDeleteShow.setVisible(false);
-		}
-		
-	}
 }
+	
+
