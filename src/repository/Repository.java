@@ -154,7 +154,7 @@ public class Repository {
 	
 	class DBConn extends Thread{
 		public void run(){
-			String url ="jdbc:sqlserver://BATTLESTATION\\BATTLESTATION;databaseName=MovieReservation;integratedSecurity=true";
+			String url ="jdbc:sqlserver://192.168.0.14\\BATTLESTATION;databaseName=MovieReservation;integratedSecurity=true";
 			try {
 				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			} catch (ClassNotFoundException e) {

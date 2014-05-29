@@ -1,6 +1,6 @@
 package startapp;
 
-import ui.MainWindow;
+import Ui.MainWindow;
 import Controller.Controller;
 import Repository.Repository;
 

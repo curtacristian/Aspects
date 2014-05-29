@@ -8,7 +8,11 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Cristi/Downloads/Microsoft JDBC Driver 4.0 for SQL Server/sqljdbc_4.0/enu/sqljdbc4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Cristi/Downloads/log4j-1.2.17.jar"/>
+=======
+	<classpathentry kind="lib" path="sqljdbc4.jar"/>
+>>>>>>> 7bdd8b6809154a371204b419e66f68584c7ff795
 	<classpathentry kind="output" path="bin"/>
 </classpath>
